@@ -10,6 +10,10 @@ public class Weather {
 	{
 		
 	}
+
+	public Weather(Weather weather) {
+		this.location = weather.location;
+	}
 	
 	
 }

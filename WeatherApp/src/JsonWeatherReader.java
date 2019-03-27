@@ -21,7 +21,7 @@ public class JsonWeatherReader {
 		loc.setLongitude(getFloat("lon", coordObj));
 		
 		JSONObject sysObj = getObject("sys",jObj);
-		loc.setCity(getString("city",sysObj));
+		loc.setCity(getString("name",jObj));
 		loc.setCountry(getString("country",sysObj));
 		loc.setSunrise(getInt("sunrise",sysObj));
 		loc.setSunset(getInt("sunset",sysObj));

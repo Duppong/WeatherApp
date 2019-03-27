@@ -17,7 +17,7 @@ public class WeatherHttpRequest {
 	 String zipCode = "58504";
 	 String countryCode = "US";
 	 
-	 String urlTest = "api.openweathermap.org/data/2.5/weather?zip=58504,us&appid=7d6c101de32c56801610872143aba7d6";
+	 String urlTest = "http://api.openweathermap.org/data/2.5/weather?zip=58504,us&appid=7d6c101de32c56801610872143aba7d6";
 	 
 	 public WeatherHttpRequest(String zipCode, String countryCode)
 	 {
