@@ -5,6 +5,7 @@ public class test {
 		WeatherHttpRequest request = new WeatherHttpRequest("58504", "us");
 		
 	
+		Weather weather = new Weather();
 		
 	}
 
