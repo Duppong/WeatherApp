@@ -9,8 +9,8 @@ public class test {
 		Weather w1 = new Weather(JsonWeatherReader.getWeather(request.getWeatherData()));
 		
 		System.out.println(w1.location.getCity());
-		System.out.println(w1.location.getSunrise());
-
+		//System.out.println(w1.temperature.getMaxTemp());
+	//	w1.temperature.getMaxTemp();
 
 	}
 

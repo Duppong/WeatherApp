@@ -27,12 +27,36 @@ public class JsonWeatherReader {
 		loc.setSunset(getInt("sunset",sysObj));
 		weather.location = loc;
 		
+		//Get weather info
+		JSONArray jArray = jObj.getJSONArray("weather");
 		
 		
+		JSONObject  JSONWeather = jArray.getJSONObject(0);
+		System.out.println(jObj.toString());
+		System.out.println(jArray.toString());
+		weather.currentCondition.setWeatherId(getInt("id", JSONWeather));
+		weather.currentCondition.setCondition(getString("main", JSONWeather));
+		weather.currentCondition.setDescription(getString("description",JSONWeather));
+		
+		
+		JSONObject mainObj = getObject("main", jObj);
+		weather.currentCondition.setHumidity(getInt("humidity", mainObj));
+		weather.currentCondition.setPressure(getInt("pressure", mainObj));
+		weather.temperature.setMaxTemp(getFloat("temp_max", mainObj));
+		weather.temperature.setMinTemp(getFloat("temp_min", mainObj));
+		weather.temperature.setTemp(getFloat("temp", mainObj));
+		
+		JSONObject windObj = getObject("wind", jObj);
+		weather.wind.setDeg(getFloat("deg" ,windObj));
+		weather.wind.setSpeed(getFloat("speed", windObj));
+		
+		JSONObject cloudsObj = getObject("clouds", jObj);
+		weather.clouds.setPercent(getInt("perc",cloudsObj));
 		
 		return weather;
-		
 	}
+	
+	
 	
 	
 		private static JSONObject getObject(String tagName, JSONObject jObj) throws JSONException {

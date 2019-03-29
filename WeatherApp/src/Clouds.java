@@ -8,6 +8,11 @@ public class Clouds {
 		
 	}
 
+	public Clouds(int percent)
+	{
+		this.percent = percent;
+	}
+	
 	public int getPercent() {
 		return percent;
 	}
