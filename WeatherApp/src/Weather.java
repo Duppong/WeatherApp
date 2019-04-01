@@ -2,11 +2,11 @@
 public class Weather {
 	
 	
-	public Temperature temperature;
-	public Location location;
-	public Wind wind; 
-	public CurrentCondition currentCondition;
-	public Clouds clouds;
+	public Temperature temperature = new Temperature();
+	public Location location = new Location();
+	public Wind wind = new Wind(); 
+	public CurrentCondition currentCondition = new CurrentCondition();
+	public Clouds clouds = new Clouds();
 	
 	public Weather()
 	{
@@ -19,9 +19,5 @@ public class Weather {
 		this.temperature = weather.temperature;
 		this.wind = weather.wind;
 		this.currentCondition = weather.currentCondition;
-	}
-	
-	
-	
-	
+	}	
 }

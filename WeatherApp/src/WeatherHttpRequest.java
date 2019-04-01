@@ -25,7 +25,11 @@ public class WeatherHttpRequest {
 		 this.countryCode = countryCode;
 	 }
 	 
-	 public String requestCurrentZipCode(String zipCode, String countyCode)
+	 public WeatherHttpRequest() {
+
+	}
+
+	public String requestCurrentZipCode(String zipCode, String countyCode)
 	 {
 		 StringBuilder url = new StringBuilder();
 		 
@@ -78,6 +82,51 @@ public class WeatherHttpRequest {
 				 con.disconnect();
 			 }catch(Throwable t) {}
 		 }
+		 return null;
+	 }
+	 
+	 public String getForecastWeatherData()
+	 {
+		 HttpURLConnection con = null;
+		 InputStreamReader is = null;
+
+		 
+		 try{
+			 //Forecast
+			 String url = "Http://api.openweathermap.org/data/2.5/forecast?zip=58504,us&appid=7d6c101de32c56801610872143aba7d6";
+			 
+			 con = (HttpURLConnection) (new URL(url)).openConnection();
+			 con.setRequestMethod("GET");
+			 con.setDoInput(true);
+			 con.setDoOutput(true);
+			 con.connect();
+			 StringBuffer buffer1 = null;
+			 
+			 try {
+				 buffer1 = new StringBuffer();
+				 is = new InputStreamReader(con.getInputStream());
+				 BufferedReader br1 = new BufferedReader(is);
+				 String line1 = null;
+				 while((line1 = br1.readLine())!= null)
+				 {
+					 buffer1.append(line1 + "\r\n");
+				 }
+			 }catch(IOException e){
+				 e.printStackTrace();
+			 }
+			 
+			 is.close();
+			 con.disconnect();
+			 
+			 System.out.println("Buffer [" + buffer1.toString() +"]");
+			 return buffer1.toString();
+		 }catch(Throwable t) {
+			 t.printStackTrace();
+		 }finally {
+			 try {is.close();}catch(Throwable t) {}
+			 try {con.disconnect();}catch(Throwable t) {}
+			 }
+		  
 		 return null;
 	 }
 }
