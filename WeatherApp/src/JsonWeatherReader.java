@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -72,13 +70,6 @@ public class JsonWeatherReader {
 			df.timestamp = jDailyForecast.getLong("dt");
 			
 			JSONObject jTempObj = jDailyForecast.getJSONObject("main");
-			
-//			df.forecastTemp.day = (float) jTempObj.getDouble("day");
-//			df.forecastTemp.min = (float) jTempObj.getDouble("min");
-//			df.forecastTemp.max = (float) jTempObj.getDouble("max");
-//			df.forecastTemp.night = (float) jTempObj.getDouble("night");
-//			df.forecastTemp.eve = (float) jTempObj.getDouble("eve");
-//			df.forecastTemp.morning = (float) jTempObj.getDouble("morning");
 			
 			df.weather.temperature.setMaxTemp(getFloat("temp_max", jTempObj));
 			df.weather.temperature.setMinTemp(getFloat("temp_min", jTempObj));

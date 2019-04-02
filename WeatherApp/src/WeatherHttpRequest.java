@@ -6,50 +6,21 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class WeatherHttpRequest {
-	
-	 static final String apiKey ="&appid=7d6c101de32c56801610872143aba7d6";
-	 String owm = "api.openweathermap.org/data/2.5/";
-	 static final String current = "weather?";
-	 static final String hourly = "forecast?";
-	 
-	 
-	 String cityName = "Bismarck";
-	 String zipCode = "58504";
-	 String countryCode = "US";
-	 
-	 String urlTest = "http://api.openweathermap.org/data/2.5/weather?zip=58504,us&appid=7d6c101de32c56801610872143aba7d6";
-	 
-	 public WeatherHttpRequest(String zipCode, String countryCode)
+
+	 public WeatherHttpRequest()
 	 {
-		 this.zipCode = zipCode;
-		 this.countryCode = countryCode;
+		 
 	 }
 	 
-	 public WeatherHttpRequest() {
 
-	}
-
-	public String requestCurrentZipCode(String zipCode, String countyCode)
-	 {
-		 StringBuilder url = new StringBuilder();
-		 
-		 url.append(owm);
-		 url.append(current);
-		 url.append("zip=" + zipCode);
-		 url.append("," + countryCode);
-		 url.append(apiKey);
-		 
-		 return url.toString();
-	 }
 	 
-	 
-	 public String getWeatherData()
+	 public String getWeatherData(String url)
 	 {
 		 HttpURLConnection con = null;
 		 InputStream is = null;
 		 
 		 try {
-			 con = (HttpURLConnection) (new URL(urlTest)).openConnection();
+			 con = (HttpURLConnection) (new URL(url)).openConnection();
 			 con.setRequestMethod("GET");
 			 con.setDoInput(true);
 			 con.setDoOutput(true);
@@ -85,7 +56,7 @@ public class WeatherHttpRequest {
 		 return null;
 	 }
 	 
-	 public String getForecastWeatherData()
+	 public String getForecastWeatherData(String url)
 	 {
 		 HttpURLConnection con = null;
 		 InputStreamReader is = null;
@@ -93,7 +64,7 @@ public class WeatherHttpRequest {
 		 
 		 try{
 			 //Forecast
-			 String url = "Http://api.openweathermap.org/data/2.5/forecast?zip=58504,us&appid=7d6c101de32c56801610872143aba7d6";
+
 			 
 			 con = (HttpURLConnection) (new URL(url)).openConnection();
 			 con.setRequestMethod("GET");

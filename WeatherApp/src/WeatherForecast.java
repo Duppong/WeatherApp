@@ -15,6 +15,7 @@ public class WeatherForecast {
 	}
 
 	public WeatherForecast(WeatherForecast weatherForecast) {
+		this.forecastDays = weatherForecast.getForecast();
 	}
 
 	public void addForecast(DailyForecast forecast)
