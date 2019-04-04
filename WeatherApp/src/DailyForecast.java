@@ -1,6 +1,9 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * @author duppong
+ *
+ */
 public class DailyForecast{
 	
 	public Weather weather = new Weather();

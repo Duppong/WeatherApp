@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author duppong
+ *
+ */
 public class WeatherForecast {
 
 	public List<DailyForecast> forecastDays = new ArrayList<DailyForecast>();

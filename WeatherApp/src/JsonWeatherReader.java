@@ -1,7 +1,10 @@
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+/**
+ * @author duppong
+ *
+ */
 public class JsonWeatherReader {
 
 	public static Weather getWeather(String data)throws JSONException{

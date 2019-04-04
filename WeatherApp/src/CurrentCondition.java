@@ -1,4 +1,8 @@
 
+/**
+ * @author duppong
+ *
+ */
 public class CurrentCondition{
 	
 	int weatherId;

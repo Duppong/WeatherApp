@@ -1,4 +1,7 @@
-
+/**
+ * @author duppong
+ *
+ */
 public class Weather {
 	
 	

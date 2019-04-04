@@ -1,5 +1,8 @@
 import java.util.Date;
-
+/**
+ * @author duppong
+ *
+ */
 public class ForecastInfo {
 	
 	private String dateInformation;

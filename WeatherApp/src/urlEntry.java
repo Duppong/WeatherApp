@@ -1,4 +1,8 @@
 
+/**
+ * @author duppong
+ *
+ */
 public class urlEntry {
 
 	
@@ -9,14 +13,25 @@ public class urlEntry {
 	 String zipCode = null;
 	 static String countryCode = "us";
 	 String lang = null;
+	 static String format = "&units=imperial";
 	 
-	 public static String getForecastByZipCode(String zipcode)
+	 //&units=imperial
+	 
+	 /**
+	 * @param zipcode
+	 * @return url String with zipcode
+	 */
+	public static String getForecastByZipCode(String zipcode)
 	 {
-		 return forecast + "zip=" + zipcode+ "," +countryCode + apiKey;
+		 return forecast + "zip=" + zipcode+ "," + format + countryCode + apiKey;
 	 }
 	 
-	 public static String getForecastByCity(String city)
+	 /**
+	 * @param city
+	 * @return url String wth City
+	 */
+	public static String getForecastByCity(String city)
 	 {
-		 return forecast + "q=" + city + "," + countryCode + apiKey;
+		 return forecast + "q=" + city+ "," + format +  countryCode + apiKey;
 	 }
 }
