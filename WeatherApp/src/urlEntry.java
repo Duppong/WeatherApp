@@ -15,15 +15,24 @@ public class urlEntry {
 	 String lang = null;
 	 static String format = "&units=imperial";
 	 
-	 //&units=imperial
+	 
 	 
 	 /**
 	 * @param zipcode
-	 * @return url String with zipcode
+	 * @return url for current Weather String with zipcode
+	 */
+	public static String getCurrentByZipCode(String zipcode)
+	 {
+		 return current + "zip=" + zipcode + "," + countryCode + format + apiKey;
+	 }
+	 
+	 /**
+	 * @param zipcode
+	 * @return url for forecast String with zipcode
 	 */
 	public static String getForecastByZipCode(String zipcode)
 	 {
-		 return forecast + "zip=" + zipcode+ "," + format + countryCode + apiKey;
+		 return forecast + "zip=" + zipcode + "," + countryCode + format + apiKey;
 	 }
 	 
 	 /**
@@ -32,6 +41,6 @@ public class urlEntry {
 	 */
 	public static String getForecastByCity(String city)
 	 {
-		 return forecast + "q=" + city+ "," + format +  countryCode + apiKey;
+		 return forecast + "q=" + city+  format + "," + countryCode + apiKey;
 	 }
 }

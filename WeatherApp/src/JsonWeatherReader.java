@@ -67,16 +67,20 @@ public class JsonWeatherReader {
 		for (int i = 0; i <jArray.length(); i++)
 		{
 			JSONObject jDailyForecast = jArray.getJSONObject(i);
+
 			
 			DailyForecast df = new DailyForecast();
 			
 			df.timestamp = jDailyForecast.getLong("dt");
+			df.dateText = jDailyForecast.getString("dt_txt");
+			
 			
 			JSONObject jTempObj = jDailyForecast.getJSONObject("main");
 			
 			df.weather.temperature.setMaxTemp(getFloat("temp_max", jTempObj));
 			df.weather.temperature.setMinTemp(getFloat("temp_min", jTempObj));
 			df.weather.temperature.setTemp(getFloat("temp", jTempObj));
+			
 			
 			
 			df.weather.currentCondition.setHumidity(getInt("humidity", jTempObj));
